@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+
+<title>Tic Tac Toe</title>
+
+<link rel="stylesheet" href="style.css"> <!-- line to stylesheet -->
+</head>
+
+<body>
+   
+        
+    <h1 class="title">Tic Tac Toe</h1> <!-- title  -->
+ 
+
+    <!-- Options UI -->
+    <div id="options" >
+        <h1>Settings</h1>
+
+        
+        <h2>Best of Three</h2>
+        <div class="btn Acitve" onclick="changeValueYesBo3()">Yes</div>
+        <div class="btn" onclick="changeValueNoBo3()">No</div>
+        
+             
+        <h2>Themes</h2>
+        <div class="btn" onclick="changeValuePurpleTheme()">Purple</div>
+        <div class="btn" onclick="changeValueAbstractTheme()">Abstract</div>
+
+       
+        <div class="play" onclick="startGame()">Play</div>
+
+
+    </div>
+    
+    <div id="wrapper" style="display:none;"> <!--board not displayed until user clicks "play"-->
+       <!-- UI-->
+        <div class="scores">
+            <h2 class="Xscore"></h2>
+            <h2 class="game--round"></h2>
+            <h2 class="Oscore"></h2>
+        </div>
+        <div class="container" >
+
+           <!-- data-cell-index 0-15 for a 4x4 grid -->
+
+            <div data-cell-index="0" class="cell"></div>
+            <div data-cell-index="1" class="cell"></div>
+            <div data-cell-index="2" class="cell"></div>
+            <div data-cell-index="3" class="cell"></div>
+            <div data-cell-index="4" class="cell"></div>
+            <div data-cell-index="5" class="cell"></div>
+            <div data-cell-index="6" class="cell"></div>
+            <div data-cell-index="7" class="cell"></div>
+            <div data-cell-index="8" class="cell"></div>
+            <div data-cell-index="9" class="cell"></div>
+            <div data-cell-index="10" class="cell"></div>
+            <div data-cell-index="11" class="cell"></div>
+            <div data-cell-index="12" class="cell"></div>
+            <div data-cell-index="13" class="cell"></div>
+            <div data-cell-index="14" class="cell"></div>
+            <div data-cell-index="15" class="cell"></div>
+
+            <div id="strike" class="strike"></div> <!-- strike that will be displayed on win -->
+        </div>
+      
+            <h2 class="game--status"></h2>
+            <div class="status">
+            <h2 class="game--Timer">Timer</h2>
+            <h2 class="game--Outcome">Outcome</h2>
+        </div>
+        
+       
+      
+       <div class="wrapper2">
+        <button class="game--restart">Restart Game</button>
+
+    
+       </div>
+           
+   
+        </div>
+        <h2  class="game--value" style="display: none;">Value</h2>
+       
+        
+    <script src="script.js"></script> <!-- link to js file -->
+    
+    <script> //script to display buttons
+
+        var index = 0 ;
+        var item = document.getElementsByClassName('btn');
+    
+        function currentButton(n){
+            showActive(index = n);
+        }
+        function showActive(n){
+            for(var i = 0 ; i < item.length ; i++){
+                item[i].className = item[i].className.replace(' Acitve','');
+            }
+            item[n].className +=' Acitve';
+        }
+    </script>
+    
+</body>
+
+
+</html>
+
